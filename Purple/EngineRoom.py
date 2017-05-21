@@ -192,7 +192,7 @@ class ParseText:
                 return False
         for index, rule in enumerate(rule_list[self.where_was_i[self.daddy_stack[-1]][-1][0]:]):
             # check if it leaf/terminal
-            if rule not in self.grammar.keys():
+            if rule not in list(self.grammar.keys()):
                 self.where_was_i[self.daddy_stack[-1]][-1][0] += 1
                 # it means its leaf, next check if it is that type of tokens
                 if self.x <= len(token_list) - 1 and rule == token_list[self.x].type.lower():
@@ -293,7 +293,7 @@ class ParseText:
                 i += 1
             return lista
 
-        for key, value in removed.iteritems():
+        for key, value in removed.items():
             if len(value) > 1:
                 where_was_i[key] = merge(value[1:], key)
         return where_was_i
@@ -328,7 +328,7 @@ class AST(object):
         try:
             self.tree_nodes[0].dooperation()
         except IndexError:
-            print "AST seems to be empty"
+            print("AST seems to be empty")
             
     # TODO initialize before tree creation starts
     # TODO think about generators

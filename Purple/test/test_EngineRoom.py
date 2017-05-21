@@ -1,7 +1,7 @@
 import unittest
 import os
 import sys
-import data
+from . import data
  
 parpath = os.path.join(os.path.dirname(sys.argv[0]), os.pardir)
 sys.path.insert(0, os.path.abspath(parpath))
@@ -13,7 +13,7 @@ class EngineRoomTC(unittest.TestCase):
 	"""Tests for EngineRoom"""
 
 	def setUp(self):
-		print "setting up mock grammar and parser"
+		print("setting up mock grammar and parser")
 		testName = self.shortDescription()
 		self.tokenListOne = breakDownStringToTokens("5 + 5 and 5 + 5", module = data)
 		self.tokenListTwo = breakDownStringToTokens("5 + 5", module = data )
@@ -39,7 +39,7 @@ class EngineRoomTC(unittest.TestCase):
 			self.ast.create_tree("baseexpr",trace)
 
 	def tearDown(self):
-		print "i m done"
+		print("i m done")
 
 	def test_parse_function(self):
 		"parse test"

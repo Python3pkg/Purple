@@ -23,7 +23,7 @@ def t_WHITESPACES(token):
     pass
 
 def t_error(t):
-    print 'Illegal character'
+    print('Illegal character')
     t.lexer.skip(1)
 
 t_ignore = ' \t\v\r'  # shortcut for whitespaces
@@ -44,11 +44,11 @@ class Node(object):
         pass
 
     def __str__(self):
-        print "<" + self.__class__.__name__ + ">"
+        print("<" + self.__class__.__name__ + ">")
         if len(self.childrens) == 0:
             return "Nema vise dece ova grana"
         for child in self.childrens:
-            print child.__str__()
+            print(child.__str__())
         return "to"
 
 
